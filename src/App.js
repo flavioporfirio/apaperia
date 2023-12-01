@@ -228,7 +228,6 @@ function PlanInfo({ info }) {
 
   const [bgColor, setBgColor] = useState("none");
   const [textColor, setTextColor] = useState(color);
-  // const height = info.name === "Ultra" ? height
 
   return (
     <div className="plan-info">

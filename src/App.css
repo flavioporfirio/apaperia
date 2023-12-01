@@ -30,6 +30,8 @@
   padding-inline: 15%;
   min-width: 100%;
   background: url("../public/imgs/bg-intro.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .logo {
@@ -243,6 +245,11 @@ ul {
 }
 
 .plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   background-color: var(--cinza-claro);
   padding-inline: 15%;
   padding-bottom: 60px;
