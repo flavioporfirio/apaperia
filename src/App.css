@@ -2,26 +2,38 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  font-family: var(--montserrat);
+}
+
+:root {
+  --branco: #fff;
+  --azul-claro: #dfe3e5;
+  --vermelho-forte: #b72e2e;
+  --cinza-escuro: #4f4c4c;
+  --cinza-claro: #f7f4f4;
+  --cinza-medio: #d9d9d9;
+  --fonte-link: #0084ff;
+  --fonte-cinza: #666;
+  --borda-cabecalho-mobile: #103d4a;
+  --bg-rodape: #333;
+  --bg-chamada-mobile: #00161c;
+  --planos-cartao-start: #56ccf2;
+  --planos-cartao-ultra: #b04cd9;
+  --planos-cartao-mega: #e33b3b;
+  --montserrat: "Montserrat", sans-serif;
 }
 
 #header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   padding-block: 20px;
 
+  padding-inline: 15%;
   min-width: 100%;
-  background-color: #00161c;
+  background: url("../public/imgs/bg-intro.jpg");
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 60px;
+  width: 100%;
 }
 
 .logo h2 {
@@ -41,6 +53,9 @@
 }
 
 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 10px;
 }
 
@@ -58,36 +73,47 @@ ul {
   color: #fff;
 }
 
-.plans {
-  background-color: #00161c;
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.intro-plans {
   color: #fff;
 
   text-align: center;
 
-  padding-block: 40px;
+  padding-block: 30px 20px;
 }
 
-.plans h2 {
-  font-size: 32px;
+.intro-plans h2 {
+  font-size: 52px;
 
   text-transform: uppercase;
 }
 
-.plans p {
-  font-size: 20px;
+.intro-plans p {
+  font-size: 22px;
 
   padding: 25px 20%;
 }
 
-.plans button {
+.intro-plans button {
   font-size: 18px;
-  padding: 10px 90px;
+  padding: 15px 90px;
 
-  border: 1px solid #fff;
+  border: 1px solid var(--branco);
+
   border-radius: 6px;
+  transition: transform 1s;
 
-  background-color: #00161c;
-  color: #fff;
+  background: none;
+  color: var(--branco);
+}
+
+.intro-plans button:hover {
+  background-color: var(--bg-chamada-mobile);
+  color: var(--branco);
+  transform: scale(1.1);
 }
 
 #highlights-list {
@@ -124,18 +150,28 @@ ul {
   padding-bottom: 20px;
 }
 
-#advantages-list {
+#advantages {
   padding: 80px 20%;
+
+  background-color: var(--cinza-claro);
 }
 
-.first-row {
+.advantages-list {
   display: flex;
-  gap: 30px;
-  padding-bottom: 40px;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.second-row {
-  padding-inline: 30%;
+.advantages-list li {
+  width: 250px;
+  height: 100px;
+
+  padding-bottom: 140px;
+}
+
+.advantage {
+  font-size: 16px;
 }
 
 .adv-header {
@@ -150,4 +186,209 @@ ul {
   text-transform: uppercase;
 
   color: #4e4b4d;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 100px;
+  justify-content: space-between;
+  padding: 40px 18%;
+}
+
+.about-img {
+  text-align: center;
+  box-shadow: 0 4px 10px 5px #000;
+}
+
+.about-text h3,
+.plans h3,
+.contact h3,
+.institucional h3 {
+  font-size: 24px;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  padding-bottom: 15px;
+  color: var(--bg-rodape);
+}
+
+.about-text p {
+  font-size: 18px;
+  font-weight: 400;
+
+  text-align: center;
+}
+
+.about-text p:nth-child(3) {
+  text-align: center;
+  padding-block: 20px;
+}
+.about-text span {
+  font-weight: bold;
+  color: var(--bg-rodape);
+}
+
+.about-text hr {
+  margin-block: 30px;
+}
+
+.plataforms {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding-bottom: 20px;
+}
+
+.plans {
+  background-color: var(--cinza-claro);
+  padding-inline: 15%;
+  padding-bottom: 60px;
+}
+
+.plans h3 {
+  padding-block: 30px 20px;
+
+  color: var(--fonte-cinza);
+}
+
+.plans-list {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.plan-info {
+  text-align: center;
+
+  background-color: var(--branco);
+  width: 350px;
+
+  box-shadow: 0 2px 10px 2px #00000010;
+  border-radius: 5.5px;
+}
+
+.plan-info h4 {
+  font-size: 24px;
+  padding-top: 10px;
+
+  color: var(--planos-cartao-start);
+}
+
+hr {
+  margin-block: 10px;
+  color: var(--cinza-medio);
+}
+
+.benefits {
+  padding-inline: 15%;
+}
+
+.benefits h4 {
+  font-size: 48px;
+  padding-block: 15px;
+}
+
+.benefits p {
+  text-align: left;
+  padding-bottom: 10px;
+
+  color: var(--fonte-cinza);
+}
+
+.benefits button {
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+
+  padding: 10px;
+  margin-bottom: 20px;
+
+  background: none;
+  border-radius: 5.5px;
+}
+
+.benefits button:hover {
+  cursor: pointer;
+  background-color: var();
+  transform: scale(1.05);
+}
+
+.contact {
+  text-align: center;
+
+  padding: 30px 15%;
+}
+
+.contact button {
+  font-size: 18px;
+
+  padding: 15px 90px;
+  margin-top: 15px;
+
+  border: 1px solid var(--cinza-escuro);
+
+  border-radius: 6px;
+  transition: transform 1s;
+
+  background: none;
+  color: var(--cinza-escuro);
+}
+
+.contact button:hover {
+  font-weight: bold;
+
+  background-color: var(--bg-chamada-mobile);
+  color: var(--branco);
+  transform: scale(1.1);
+}
+
+.institucional {
+  padding-inline: 20%;
+  padding-block: 60px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-info p {
+  font-size: 18px;
+
+  color: var(--fonte-cinza);
+}
+
+.address {
+  font-size: 22px;
+  color: var(--fonte-cinza);
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+
+  padding-top: 20px;
+}
+
+video {
+  width: 90%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 60px 15%;
+
+  background-color: var(--bg-rodape);
+}
+
+.socials li {
+  padding-right: 15px;
+  cursor: pointer;
 }
