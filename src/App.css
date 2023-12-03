@@ -25,10 +25,9 @@
 }
 
 #header {
-  padding-block: 20px;
-
-  padding-inline: 15%;
+  padding: 20px 20%;
   min-width: 100%;
+
   background: url("../public/imgs/bg-intro.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,6 +109,8 @@ ul {
 
   background: none;
   color: var(--branco);
+
+  cursor: pointer;
 }
 
 .intro-plans button:hover {
@@ -143,6 +144,19 @@ ul {
 
   background-color: #dfe3e4;
   color: #7a1844;
+
+  cursor: pointer;
+
+  transition: transform 1s;
+}
+
+#highlights-list button:hover {
+  font-weight: bold;
+  transform: scale(0.9);
+
+  border: 1px solid var(--fonte-link);
+  background-color: var(--fonte-link);
+  color: var(--branco);
 }
 
 .highlight {
@@ -191,11 +205,11 @@ ul {
 }
 
 .about {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  grid-gap: 100px;
-  justify-content: space-between;
-  padding: 40px 18%;
+  display: flex;
+  justify-items: center;
+  gap: 50px;
+  align-items: self-start;
+  padding: 40px 15%;
 }
 
 .about-img {
@@ -251,7 +265,6 @@ ul {
   justify-content: center;
 
   background-color: var(--cinza-claro);
-  padding-inline: 15%;
   padding-bottom: 60px;
 }
 
@@ -342,6 +355,8 @@ hr {
 
   background: none;
   color: var(--cinza-escuro);
+
+  cursor: pointer;
 }
 
 .contact button:hover {
@@ -398,4 +413,92 @@ video {
 .socials li {
   padding-right: 15px;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  #header,
+  .highlight-list,
+  .contact,
+  .plans,
+  .institucional {
+    padding-inline: 5%;
+  }
+
+  .nav {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .nav-list {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .plan-info {
+    width: 300px;
+  }
+
+  .footer {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .socials {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 688px) {
+  .plans-list {
+    flex-direction: column;
+  }
+
+  .plan-info {
+    width: 350px;
+  }
+
+  .intro-plans p {
+    padding-inline: 5%;
+  }
+
+  .info-container {
+    grid-template-columns: 80%;
+    grid-gap: 30px;
+  }
+
+  .address {
+    padding-block: 20px;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  .highlight img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 393px) {
+  #header,
+  .highlight-list,
+  .contact,
+  .plans,
+  .institucional {
+    padding-inline: 0;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
